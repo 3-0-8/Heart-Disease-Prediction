@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <style>
+      /*  h1{
+	        text-align:center;
+            color: rgb(240, 64, 64);
+            background-color: black;
+        }
+        body{
+            background-color: #b8deeb;
+        }
+        .image{
+            float: left;
+        }
+        .input{
+            margin-right: 10px;
+            font-size: larger;
+            float: right;
+        }
+        .submit{
+            background-color: hsl(197, 88%, 84%); 
+            border: black;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: #1d04ad;
+            display: inline-block;
+            font-size: 16px;
+        } */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        .background {
+            /* Sizing */
+            width: 100vw;
+            height: 100vh;
+
+            /* Flexbox stuff */
+            /*display: flex;
+            justify-content: center;
+            align-items: center;*/
+
+             /* Text styles */
+            text-align: center;
+            color: white;
+
+             /* Background styles */
+            border: 3px solid white;
+            background-image: linear-gradient(rgba(3, 41, 63, 0.5),rgba(4, 67, 70, 0.5)), url('/static/sign2.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;     
+        }
+        .hero-inner{
+            columns: black;
+        }
+        .hero-inner h1 {
+            /* Text styles */
+            font-size: 30px;
+            color: black;
+            text-emphasis-color: black;
+            font-family: 'Poppins', sans-serif;
+
+            /* Margins */
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        .btn{
+           /* Positioning and sizing */
+            width: 100px;
+            
+            /* Padding and margins */
+            padding: 8px;
+            margin-top: 5px;
+            margin-left: auto;
+            margin-right: auto;
+
+            /* Text styles */
+            color: black;
+            text-decoration: none;
+            font-size: 25px;
+            background-color: rgb(189, 236, 236);
+            
+            /* Border styles */
+            border: 3px solid rgb(44, 1, 1);
+            border-radius: 10px;
+        } 
+        
+        .topnav{
+            overflow: hidden;
+            background-color: black;
+        }
+        .topnav a{
+            float: right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav label{
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+    <section class="background">
+        <div class='topnav'>
+            <a href="{% url 'home' %}"> Registration</a>
+            <a href="{% url 'signin' %}"> Sign In</a>
+            <a href="{% url 'signup' %}"> Sign Up</a>
+            <label>Hello, {{request.user}}</label>
+            
+        </div>
+            
+    
+        
+        <section class="background">
+        <div class="hero-inner">
+          
+            <h1>Heart Disease Prediction System</h1><br>
+            <!-- <div class="image">
+                <img class="logo" src="/static/input.png" height="600" width="180%">   -->
+           
+            <form action="/prediction/" method="">
+                {% csrf_token%}
+            <!-- </div>
+            
+            <div class="input"> -->
+                    
+            Enter patients gender:
+            <select name="gender" required>
+                <option>Male</option>
+                <option>Female</option>
+            </select><br><br>
+
+            Enter Patient's Age:
+            <input type="number" name="age" required><br><br>
+
+            Enter whether Patient Smokes:
+        <select name="smoker" required>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    <br><br>
+
+            Enter whether Patient has any case of Stroke:
+            <select name="Stroke" required>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        <br><br>
+
+
+            Enter whether Patient has any case of Hypertension:
+            <select name="Hypertension" required>
+                <option>Yes</option>
+                <option>No</option>
+            </select><br><br>
+                
+                Enter whether Patient has diabetes:
+                <select name="diabetes">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <br><br>
+
+                Enter  patient cholestrol level:
+                <input type="number" name="cholestrol" required><br><br>
+
+                Enter  patient glucose level:
+                <input type="number" name="glucose"><br><br>
+
+                Enter patient's Systolic Blood Pressure:
+                <input type="number" name="systolic_bp"  required><br><br> 
+
+                Enter patient Diastolic Blood Pressure:
+                <input type="number" name="diastolic_bp"  required><br><br> 
+
+                Enter patient's BMI:
+                <input type="number" name="BMI"  required><br><br> 
+
+                <button input type="submit" class ="btn">Predict</button>
+               
+            </form>
+        </div>
+    </section>  
+</body>
+</html>

@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <style>
+     *{
+      font-family: Arial, Helvetica, sans-serif;
+     }
+    body {
+            margin: 0;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        .background {
+            /* Sizing */
+            width: 100vw;
+            height: 100vh;
+
+            /* Flexbox stuff */
+          
+            justify-content: center;
+            align-items: center;
+
+             /* Text styles */
+            text-align: center;
+            color: white;
+
+             /* Background styles */
+            border: 3px solid white;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('/static/predict.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;     
+        }
+        .hero-inner{
+          text-align: center;
+        }
+        .hero-inner h1 {
+            /* Text styles */
+            font-size: 30px;
+            color: black;
+            text-emphasis-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+             /* Margins */
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+  
+        .hero-inner h3{
+          color: black;
+        }
+
+
+        button {
+           /* Positioning and sizing */
+            width: 100px;
+            
+            /* Padding and margins */
+            padding: 8px;
+            margin-top: 5px;
+            margin-left: auto;
+            margin-right: auto;
+
+            /* Text styles */
+            color: rgb(95, 41, 41);
+            text-decoration: none;
+            font-size: 25px;
+            
+            /* Border styles */
+            border: 3px solid rgb(44, 1, 1);
+            border-radius: 10px;
+        }
+        .topnav{
+          overflow: hidden;
+          background-color: black;
+      }
+      .topnav a{
+          float: right;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+      }
+      .topnav label{
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+</style>
+</head>
+    <body>
+      <section class="background">
+        <div class='topnav'>
+          <a href="{% url 'home' %}"> Registration</a>
+          <a href="{% url 'signin' %}"> Sign In</a>
+          <a href="{% url 'signup' %}"> Sign Up</a>
+          <label>Hello,{{request.user}}</label>
+          
+        </div><br><br><br><br>
+        
+        <div class="hero-inner">
+          
+          <h1>Heart Disease Prediction System</h1><br><br><br><br>
+          <!-- <div class="result"> -->
+          <h2>RESULTS: <p> {{prediction}}</p></h2>
+          <br><br><br><br><br><br><br><br><br><br>
+          <div class reports>
+          <h3> To view reports click on the links below;</h3>
+          <a href="{% url 'report_user'%}"><button>Users<br>Report</button></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          <a href="{% url 'graph_report'%}"><button>Graph<br>Report</button></a>
+          </div>
+          <!-- </div>
+          <div class="image">
+          <img class="logo" src="/static/predict.png"height="650" width="14
+          0%"> -->
+        </div>
+      </section>   
+          
+      
+      
+    </body>
+</html>

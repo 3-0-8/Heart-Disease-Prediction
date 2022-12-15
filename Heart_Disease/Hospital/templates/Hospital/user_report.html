@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <style>
+            th,td{
+                text-align: left;
+            }
+        </style>
+    </head>
+    <table>
+        <tr>
+            <th>username</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Result</th>
+        </tr>
+        {% for query in query%}
+        <tr>
+            
+            <td>{{query.user}} </td>
+            <td>{{query.date}} </td>
+            <td>{{query.time}} </td>
+            <td>{{query.result}} </td>
+        </tr>
+        {%endfor%}
+    </table>
+</html>

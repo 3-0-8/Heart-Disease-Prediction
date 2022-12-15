@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+    <div>
+    <h1>Graph of Age</h1><br>
+    <img src="image/Age.png">
+    </div>
+    <div>
+        <h1>Graph of hypertension </h1><br>
+        
+        <img src="image/hypertension.png">
+        </div>
+        
+        <div>
+            <h1>Sample Of Dataset</h1>
+            {{dataset|safe}}
+        </div>
+        <div>
+            <h1> Dataset desc</h1>
+            {{datasetdescribe|safe}}
+        </div>
+        
+</html>
